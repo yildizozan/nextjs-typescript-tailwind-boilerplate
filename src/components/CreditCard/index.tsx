@@ -1,9 +1,17 @@
 import { FC } from 'react'
 
-const Creditcard: FC = () => {
+interface CreditCardProps {
+  isCreditCard: boolean
+}
+
+const CreditCard: FC<CreditCardProps> = ({ isCreditCard }) => {
   return (
     <div className="w-96 h-56 m-auto bg-red-100 rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-110">
-      <img className="relative object-cover w-full h-full rounded-xl" src="https://i.imgur.com/kGkSg1v.png" alt="" />
+      <img
+        className="relative object-cover w-full h-full rounded-xl"
+        src={isCreditCard ? 'https://i.imgur.com/kGkSg1v.png' : 'https://i.imgur.com/Zi6v09P.png'}
+        alt=""
+      />
 
       <div className="w-full px-8 absolute top-8">
         <div className="flex justify-between">
@@ -35,4 +43,4 @@ const Creditcard: FC = () => {
   )
 }
 
-export default Creditcard
+export default CreditCard
